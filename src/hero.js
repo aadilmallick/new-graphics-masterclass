@@ -1,0 +1,14 @@
+import * as THREE from 'three';
+export function mountHero(host){
+  let renderer;try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});}catch{host.innerHTML='<div class="hero-fallback">x² + y² + z² = r²<br><small>A world begins with a relationship.</small></div>';return ()=>{};}
+  renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.setClearColor(0,0);host.append(renderer.domElement);renderer.domElement.setAttribute('aria-label','A faceted mint sculpture surrounded by orbital geometry');renderer.domElement.setAttribute('role','img');
+  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(35,1,.1,100);camera.position.set(5,3.5,7);camera.lookAt(0,0,0);
+  scene.add(new THREE.HemisphereLight(0xb7d7ff,0x24394a,3));const light=new THREE.DirectionalLight(0xc2ffe9,5);light.position.set(2,4,5);scene.add(light);const rim=new THREE.DirectionalLight(0x8c9dff,4);rim.position.set(-4,1,-3);scene.add(rim);
+  const group=new THREE.Group();scene.add(group);const geometry=new THREE.IcosahedronGeometry(1.35,1),material=new THREE.MeshStandardMaterial({color:0x72dfbb,metalness:.55,roughness:.28,flatShading:true});const sculpture=new THREE.Mesh(geometry,material);group.add(sculpture);
+  const edges=new THREE.LineSegments(new THREE.EdgesGeometry(geometry),new THREE.LineBasicMaterial({color:0xd1ffef,transparent:true,opacity:.28}));group.add(edges);
+  const rings=[];for(let i=0;i<3;i++){const ring=new THREE.Mesh(new THREE.TorusGeometry(2+i*.14,.009,6,160),new THREE.MeshBasicMaterial({color:i===1?0x87aaff:0x77c4af,transparent:true,opacity:.55}));ring.rotation.set(Math.PI/2+i*.45,i*.7,.2);scene.add(ring);rings.push(ring);}
+  const points=new Float32Array(80*3);for(let i=0;i<80;i++){const a=i*2.399963,r=2.8+(i%5)*.18;points.set([Math.cos(a)*r,Math.sin(i*3.4)*1.6,Math.sin(a)*r],i*3);}const starsGeometry=new THREE.BufferGeometry();starsGeometry.setAttribute('position',new THREE.BufferAttribute(points,3));scene.add(new THREE.Points(starsGeometry,new THREE.PointsMaterial({color:0x8eb4b0,size:.025,transparent:true,opacity:.7})));
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;let id,active=true,lastW=0,lastH=0;
+  function frame(time){if(!active)return;const r=host.getBoundingClientRect(),w=Math.max(1,r.width),h=Math.max(1,r.height);if(w!==lastW||h!==lastH){renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();lastW=w;lastH=h;}if(!reduced){group.rotation.y=time*.00014;group.rotation.z=Math.sin(time*.0003)*.1;group.position.y=Math.sin(time*.0006)*.12;}renderer.render(scene,camera);id=requestAnimationFrame(frame);}id=requestAnimationFrame(frame);
+  return ()=>{active=false;cancelAnimationFrame(id);scene.traverse(o=>{o.geometry?.dispose();if(o.material)o.material.dispose();});renderer.dispose();renderer.domElement.remove();};
+}

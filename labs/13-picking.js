@@ -1,0 +1,10 @@
+import {setup,THREE,floor} from './three-scene.js';import {note,select} from './ui.js';
+export function mount(host,panel){
+  const app=setup(host);floor(app.scene);const objects=[];for(let i=0;i<5;i++){const mesh=new THREE.Mesh(new THREE.IcosahedronGeometry(.65,i%2),new THREE.MeshStandardMaterial({color:new THREE.Color().setHSL(.4+i*.06,.65,.55),roughness:.4}));mesh.position.set((i-2)*1.6,.9,Math.sin(i)*.7);mesh.castShadow=true;mesh.userData.name=`Crystal ${i+1}`;app.scene.add(mesh);objects.push(mesh);}
+  const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();let selected=null;let info;
+  const chooser=select(panel,'Select crystal',Object.fromEntries([['none','No selection'],...objects.map((object,i)=>[String(i),object.userData.name])]),value=>{choose(objects[Number(value)]||null);info.textContent=selected?`${selected.userData.name} selected from the accessible object list.`:'No selection.';});
+  chooser.value='none';info=note(panel,'Click a crystal or use the object list to select it.');info.setAttribute('role','status');note(panel,'Pointer coordinates are measured inside the canvas, converted to normalized device coordinates, and unprojected into a world-space ray.');
+  function choose(object){if(selected)selected.material.emissive.setHex(0);selected=object;if(selected)selected.material.emissive.setHex(0x214a42);chooser.value=selected?String(objects.indexOf(selected)):'none';}
+  function pick(event){const r=app.renderer.domElement.getBoundingClientRect();pointer.set((event.clientX-r.left)/r.width*2-1,1-(event.clientY-r.top)/r.height*2);raycaster.setFromCamera(pointer,app.camera);const hit=raycaster.intersectObjects(objects)[0];choose(hit?.object||null);info.textContent=hit?`${hit.object.userData.name} · distance ${hit.distance.toFixed(2)} world units · triangle ${hit.faceIndex}`:'No intersection. The ray missed every mesh.';}
+  app.renderer.domElement.addEventListener('click',pick);app.disposeWith(()=>app.renderer.domElement.removeEventListener('click',pick));return app.dispose;
+}

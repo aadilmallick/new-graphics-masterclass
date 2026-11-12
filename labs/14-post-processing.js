@@ -1,0 +1,8 @@
+import {setup,THREE,floor} from './three-scene.js';import {range,note} from './ui.js';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+export function mount(host,panel){
+  const app=setup(host);floor(app.scene);const geometry=new THREE.TorusGeometry(1.3,.07,16,128),materials=[];for(let i=0;i<3;i++){const material=new THREE.MeshStandardMaterial({color:0x82ebcc,emissive:new THREE.Color().setHSL(.45+i*.1,1,.5),emissiveIntensity:3,roughness:.3});materials.push(material);const mesh=new THREE.Mesh(geometry,material);mesh.position.y=1.7;mesh.rotation.set(Math.PI/2+i*.5,i*.6,0);app.scene.add(mesh);}
+  const composer=new EffectComposer(app.renderer),scenePass=new RenderPass(app.scene,app.camera),bloom=new UnrealBloomPass(new THREE.Vector2(1,1),.6,.4,1),output=new OutputPass();composer.addPass(scenePass);composer.addPass(bloom);composer.addPass(output);
+  app.onResize=(w,h)=>composer.setSize(w,h);app.setRender(()=>composer.render());range(panel,'Bloom strength',0,2,.6,.01,v=>bloom.strength=v);range(panel,'Brightness threshold',0,4,1,.01,v=>bloom.threshold=v);range(panel,'Emission',0,8,3,.01,v=>materials.forEach(m=>m.emissiveIntensity=v));note(panel,'Scene → HDR render target → bright-pass blur → composite → tone mapping and output conversion. OutputPass belongs at the end. Bloom spreads bright radiance; it does not illuminate nearby objects.');
+  app.disposeWith(()=>{bloom.dispose();scenePass.dispose?.();output.dispose();composer.dispose();});return app.dispose;
+}

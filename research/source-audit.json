@@ -1,0 +1,62 @@
+{
+  "audited_on": "2026-11-12",
+  "purpose": "Provenance and access record for original Graphics Atelier teaching material",
+  "textbook": {
+    "title": "Introduction to Computer Graphics",
+    "author": "David J. Eck",
+    "version": "1.4, August 2023",
+    "local_source": "C:/Users/amallick.ENGINEERS/Downloads/graphicsbook-linked (1).pdf",
+    "pdf_pages": 533,
+    "page_reference_convention": "Printed book page numbers, not PDF viewer indices",
+    "online_edition": "https://math.hws.edu/graphicsbook/",
+    "prose_license": "CC BY-NC-SA 4.0",
+    "extraction": "Full local text extraction; contents and selected substantive sections inspected",
+    "do_not_publish": ["research/textbook.txt"],
+    "sampled_sections": ["3.5", "5.1", "9.3.1", "9.7.1", "9.7.2"],
+    "legacy_three_release": "r154"
+  },
+  "webgl_fundamentals": {
+    "url": "https://webglfundamentals.org/",
+    "status": "Index and representative substantive articles inspected; not every linked article read in full; interactive editors not executed",
+    "api_baseline": "WebGL 1; adapt deliberately to WebGL 2/GLSL ES 3.00 where used by course",
+    "families_mapped": ["Fundamentals and state", "Image processing", "2D transforms", "3D projection and cameras", "Lighting", "Organization and hierarchy", "Geometry and assets", "Textures and projected mapping", "Render targets", "Shadows", "2D sprites and stacks", "Cubemaps and environments", "Skinning", "Fog", "Picking", "Text", "Toon ramps", "GPGPU", "Indices and instancing", "Browser integration and reference"],
+    "inspected_article_slugs": ["webgl-fundamentals", "webgl-image-processing", "webgl-2d-matrices", "webgl-3d-perspective", "webgl-3d-camera", "webgl-3d-lighting-directional", "webgl-scene-graph", "webgl-3d-geometry-lathe", "webgl-3d-textures", "webgl-3d-perspective-correct-texturemapping", "webgl-render-to-texture", "webgl-shadows", "webgl-cube-maps", "webgl-skinning", "webgl-fog", "webgl-picking", "webgl-text-glyphs", "webgl-ramp-textures", "webgl-gpgpu", "webgl-instanced-drawing", "webgl-and-alpha"]
+  },
+  "learn_webgpu": {
+    "requested_url": "https://learn-webgpu.com/en/tutorial",
+    "requested_url_status": "Inaccessible via web tool during audit",
+    "accessible_index": "https://learn-webgpu.com/tutorial",
+    "accessible_home": "https://learn-webgpu.com/en",
+    "index_language": "Japanese; English family names independently confirmed by English individual lesson navigation",
+    "index_lesson_count": 14,
+    "families_mapped": ["Setup", "First triangle", "Buffers and uniforms", "Textures and sampling", "Lighting and shading", "Compute plus graphics", "Performance"],
+    "inspected_lessons": ["https://learn-webgpu.com/tutorial/getting-started/canvas-setup", "https://learn-webgpu.com/tutorial/first-triangle/basic-triangle", "https://learn-webgpu.com/tutorial/buffers-uniforms/vertex-buffers", "https://learn-webgpu.com/tutorial/textures/basic-texture", "https://learn-webgpu.com/tutorial/textures/multiple-textures", "https://learn-webgpu.com/tutorial/lighting/phong-lighting", "https://learn-webgpu.com/en/tutorial/compute-graphics/particle-system", "https://learn-webgpu.com/tutorial/performance/optimization-techniques"],
+    "index_only_or_inaccessible": ["WebGPU initialization", "Colored triangle", "Uniforms", "Advanced lighting", "Compute image processing", "Instancing"],
+    "interactive_code_executed": false
+  },
+  "current_primary_references": {
+    "three_stable_version": "0.187.0",
+    "three_release": "r187",
+    "three_release_url": "https://github.com/mrdoob/three.js/releases/tag/r187",
+    "npm_metadata": "https://registry.npmjs.org/three/latest",
+    "three_renderer_guide": "https://threejs.org/manual/pages/webgpurenderer.html",
+    "three_color_guide": "https://threejs.org/manual/pages/color-management.html",
+    "three_migration_guide": "https://github.com/mrdoob/three.js/wiki/Migration-Guide",
+    "webgpu_spec": "https://www.w3.org/TR/webgpu/",
+    "webgpu_spec_publication": "2026-09-15 Candidate Recommendation Draft",
+    "wgsl_spec": "https://www.w3.org/TR/WGSL/",
+    "wgsl_spec_publication": "2026-11-06 Candidate Recommendation Draft"
+  },
+  "modernization_checks": [
+    "Use device.lost as Promise property, not textbook device.lost() call",
+    "Distinguish WGSL member alignment from device binding offset alignment",
+    "Use runtime feature and limit checks instead of hardcoded support promises",
+    "Use WebGL2 shaders with #version 300 es, in/out, and explicit fragment output where the course chooses WebGL2",
+    "Keep Three.js core and addons on one pinned release",
+    "Use node materials/TSL for WebGPURenderer custom shading",
+    "Keep WebGL EffectComposer and WebGPU processing paths distinct",
+    "Use linear color arithmetic and one intended final output conversion",
+    "Avoid removed CubeUVReflectionMapping in r187",
+    "Do not present immediate-mode OpenGL or Java/C APIs as browser APIs"
+  ]
+}

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.sites-runtime/
+research/textbook.txt
+research/*preview*
+research/screenshots/
+*.tar.gz
+*.zip
