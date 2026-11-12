@@ -1,0 +1,282 @@
+[
+  {
+    "id": "00",
+    "title": "From a JavaScript program to a visible world",
+    "proseWords": 2029,
+    "sections": 10,
+    "codeExamples": 2
+  },
+  {
+    "id": "01",
+    "title": "Pixels, coordinates, and the drawing surface",
+    "proseWords": 2324,
+    "sections": 13,
+    "codeExamples": 4
+  },
+  {
+    "id": "02",
+    "title": "Color, alpha, and the meaning of brightness",
+    "proseWords": 2346,
+    "sections": 12,
+    "codeExamples": 3
+  },
+  {
+    "id": "03",
+    "title": "Drawing with Canvas and SVG",
+    "proseWords": 2319,
+    "sections": 13,
+    "codeExamples": 5
+  },
+  {
+    "id": "04",
+    "title": "The small language of graphics mathematics",
+    "proseWords": 2462,
+    "sections": 13,
+    "codeExamples": 3
+  },
+  {
+    "id": "05",
+    "title": "Vectors: directions, distances, and orientation",
+    "proseWords": 2501,
+    "sections": 13,
+    "codeExamples": 2
+  },
+  {
+    "id": "06",
+    "title": "Angles, circles, and oscillation",
+    "proseWords": 2346,
+    "sections": 14,
+    "codeExamples": 3
+  },
+  {
+    "id": "07",
+    "title": "Matrices as coordinate machines",
+    "proseWords": 2380,
+    "sections": 15,
+    "codeExamples": 1
+  },
+  {
+    "id": "08",
+    "title": "3D transforms and coordinate frames",
+    "proseWords": 2562,
+    "sections": 16,
+    "codeExamples": 2
+  },
+  {
+    "id": "09",
+    "title": "Cameras, perspective, and clipping",
+    "proseWords": 2413,
+    "sections": 14,
+    "codeExamples": 1
+  },
+  {
+    "id": "10",
+    "title": "From triangles to fragments",
+    "proseWords": 2384,
+    "sections": 15,
+    "codeExamples": 1
+  },
+  {
+    "id": "11",
+    "title": "The GPU and the programmable pipeline",
+    "proseWords": 2655,
+    "sections": 17,
+    "codeExamples": 0
+  },
+  {
+    "id": "12",
+    "title": "Your first complete WebGL 2 program",
+    "proseWords": 2349,
+    "sections": 17,
+    "codeExamples": 6
+  },
+  {
+    "id": "13",
+    "title": "Thinking in GLSL",
+    "proseWords": 2312,
+    "sections": 11,
+    "codeExamples": 2
+  },
+  {
+    "id": "14",
+    "title": "Buffers, vertex arrays, meshes, and state",
+    "proseWords": 2310,
+    "sections": 13,
+    "codeExamples": 2
+  },
+  {
+    "id": "15",
+    "title": "Textures and sampling",
+    "proseWords": 2374,
+    "sections": 12,
+    "codeExamples": 3
+  },
+  {
+    "id": "16",
+    "title": "Lighting and the geometry of normals",
+    "proseWords": 2367,
+    "sections": 12,
+    "codeExamples": 1
+  },
+  {
+    "id": "17",
+    "title": "Framebuffers, filters, and shadows",
+    "proseWords": 2350,
+    "sections": 12,
+    "codeExamples": 1
+  },
+  {
+    "id": "18",
+    "title": "Organizing and extending a WebGL renderer",
+    "proseWords": 2527,
+    "sections": 14,
+    "codeExamples": 1
+  },
+  {
+    "id": "19",
+    "title": "Your first Three.js scene",
+    "proseWords": 2377,
+    "sections": 13,
+    "codeExamples": 1
+  },
+  {
+    "id": "20",
+    "title": "Geometry, curves, and surface derivatives",
+    "proseWords": 2359,
+    "sections": 12,
+    "codeExamples": 2
+  },
+  {
+    "id": "21",
+    "title": "Materials and physically based shading",
+    "proseWords": 2493,
+    "sections": 14,
+    "codeExamples": 0
+  },
+  {
+    "id": "22",
+    "title": "Lighting a scene with intent",
+    "proseWords": 2361,
+    "sections": 13,
+    "codeExamples": 1
+  },
+  {
+    "id": "23",
+    "title": "Models, textures, and the asset pipeline",
+    "proseWords": 2367,
+    "sections": 15,
+    "codeExamples": 2
+  },
+  {
+    "id": "24",
+    "title": "Time, animation, and quaternions",
+    "proseWords": 2367,
+    "sections": 14,
+    "codeExamples": 2
+  },
+  {
+    "id": "25",
+    "title": "Interaction, picking, and accessible controls",
+    "proseWords": 2372,
+    "sections": 13,
+    "codeExamples": 2
+  },
+  {
+    "id": "26",
+    "title": "Custom shaders and procedural surfaces",
+    "proseWords": 2306,
+    "sections": 12,
+    "codeExamples": 2
+  },
+  {
+    "id": "27",
+    "title": "Particles, instancing, and data-driven worlds",
+    "proseWords": 2357,
+    "sections": 13,
+    "codeExamples": 3
+  },
+  {
+    "id": "28",
+    "title": "Post-processing and color pipelines",
+    "proseWords": 2334,
+    "sections": 14,
+    "codeExamples": 2
+  },
+  {
+    "id": "29",
+    "title": "Performance by measurement",
+    "proseWords": 2430,
+    "sections": 17,
+    "codeExamples": 0
+  },
+  {
+    "id": "30",
+    "title": "Art direction: a complete scene study",
+    "proseWords": 2463,
+    "sections": 15,
+    "codeExamples": 1
+  },
+  {
+    "id": "31",
+    "title": "WebGPU: explicit resources and commands",
+    "proseWords": 2315,
+    "sections": 15,
+    "codeExamples": 2
+  },
+  {
+    "id": "32",
+    "title": "WGSL, bindings, and memory layout",
+    "proseWords": 2336,
+    "sections": 15,
+    "codeExamples": 4
+  },
+  {
+    "id": "33",
+    "title": "3D rendering and textures in WebGPU",
+    "proseWords": 2325,
+    "sections": 14,
+    "codeExamples": 1
+  },
+  {
+    "id": "34",
+    "title": "Compute shaders and readback",
+    "proseWords": 2314,
+    "sections": 13,
+    "codeExamples": 3
+  },
+  {
+    "id": "35",
+    "title": "A compute-to-render particle system",
+    "proseWords": 2433,
+    "sections": 16,
+    "codeExamples": 0
+  },
+  {
+    "id": "36",
+    "title": "Three.js WebGPU and TSL",
+    "proseWords": 2322,
+    "sections": 14,
+    "codeExamples": 2
+  },
+  {
+    "id": "37",
+    "title": "Rays, distance fields, and path tracing",
+    "proseWords": 2496,
+    "sections": 14,
+    "codeExamples": 1
+  },
+  {
+    "id": "38",
+    "title": "Designing a small graphics engine",
+    "proseWords": 2483,
+    "sections": 17,
+    "codeExamples": 1
+  },
+  {
+    "id": "39",
+    "title": "Production and the capstone sequence",
+    "proseWords": 2088,
+    "sections": 14,
+    "codeExamples": 0
+  }
+]

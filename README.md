@@ -4,6 +4,8 @@ A first-principles web graphics masterclass for JavaScript programmers: **40 seq
 
 The curriculum moves from pixels and Canvas/SVG through vectors, trigonometry, matrices, cameras, rasterization, WebGL 2, Three.js, PBR, shaders, performance, native WebGPU/WGSL, compute, TSL, ray-based rendering, and engine architecture. The website presents the same Markdown files with rendered math, source inspection, search, and browser-local completion marks.
 
+The expanded textbook edition develops concepts through motivation, definitions, worked arithmetic, derivations, explained code, and practical diagnosis. Read the prose and worked examples in order before exploring the full lab. The reference chapters remain compact lookup companions. Run `node scripts/chapter-depth.mjs` for chapter-level reading statistics; these measure length, not an assessment of learning.
+
 ## Start locally
 
 Install Node.js 20.19+ or a compatible current LTS, then run these commands in this folder:

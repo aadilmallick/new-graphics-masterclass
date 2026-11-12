@@ -1,3 +1,15 @@
+# Expanded textbook revision verification
+
+The 40 core lessons were expanded from 27,527 to 95,008 prose words, excluding fenced code. The complete learning collection now contains 102,796 prose words, 76 fenced examples, and 198 parsed math expressions. Technical chapters 01–38 exceed 2,300 prose words; orientation and conclusion exceed 2,000. Per-chapter counts are in chapter-depth.json.
+
+The revision integrates numerical reasoning, derivations, code walkthroughs, prerequisite explanations, and diagnostic scenarios into each chapter. Section order was reviewed so related worked explanations precede or accompany formal summaries. The reference chapters remain lookup companions.
+
+All 51 reading pages were opened in the production preview without missing content or KaTeX errors. The long-chapter table of contents was visually inspected and now scrolls independently. Mathematical tests, content/link/math checks, and the production build passed. Lab source was unchanged; the earlier lab verification below remains a record of those implementations. New instructional code fragments were reviewed in context, not all executed as independent applications.
+
+The record below describes the original edition and its rendering tests.
+
+---
+
 # Verification record
 
 Verified on 12 November 2026 in the local desktop environment.
